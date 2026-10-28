@@ -13,61 +13,125 @@
 
   <main>
     <form id="inscricao-jogos" action="/inscricoes-jogos" method="post" enctype="multipart/form-data">
+
         <fieldset>
+
           <legend>Identificação do atleta</legend>
+
           <label for="nome-atleta">Nome completo do atleta (obrigatório)</label>
             <input type="text" id="nome-atleta" name="nome_atleta" required>
+
           <label for="email-atleta">E-mail de contato (obrigatório)</label>
             <input type="email" id="email-atleta" name="email_atleta" required>
+
+          <label for="telefone_atleta">Telefone</label>
+            <input type="tel" name="telefone_atleta">
+
+          <label for="senha_demonstrativa">Senha</label>
+            <input type="password" name="senha_demonstrativa">
+
+          <label for="acompanhantes">Acompanhantes</label>
+            <input type="number" name="acompanhantes">
+
+          <label for="nascimento">Data de nascimento</label>
+            <input type="date" name="nascimento">
+
+          <label for="documento">Documentos</label>
+            <input type="file" name="documento">
+
         </fieldset>
 
         <fieldset>
+
           <legend>Participação nos jogos</legend>
+
+          <input type="hidden" name="edicao" value="jogos-2026">
+
           <label for="equipe">Nome da equipe</label>
             <input type="text" id="equipe" name="equipe" value="Equipe Horizonte">
+
+          <label for="mmes_preparacao">Mês da preparação: </label>
+            <input type="month" name="mes_preparacao">
+
+          <label for="cor_delegacao">Cor da sua delegação</label>
+            <input type="color" name="cor_delegacao">
+
+          <label for="semana_treinamento">Semana de treinamento</label>
+            <input type="week" name="semana_treinamento">
+
+          <label for="hora_chegada">Hora da chegada</label>
+            <input type="time" name="hora_chegada">
+
+          <label for="retirada_kit">Retiração do kit</label>
+            <input type="datetime-local" name="retirada_kit">
+
         </fieldset>
 
         <fieldset>
+
           <legend>Turno de preferência</legend>
+
             <input type="radio" id="turno-manha" name="turno" value="manha">
+
           <label for="turno-manha">Manhã</label>
             <input type="radio" id="turno-tarde" name="turno" value="tarde">
+
           <label for="turno-tarde">Tarde</label>
+
         </fieldset>
 
         <fieldset>
+
           <legend>Modalidades de interesse</legend>
-            <input type="checkbox" id="interesse-futsal"
-          name="modalidades" value="futsal">
+
+          <input type="checkbox" id="interesse-futsal" name="modalidades" value="futsal">
+
           <label for="interesse-futsal">Futsal</label>
-            <input type="checkbox" id="interesse-volei"
-          name="modalidades" value="voleibol" checked>
+            <input type="checkbox" id="interesse-volei" name="modalidades" value="voleibol" checked>
+
           <label for="interesse-volei">Voleibol</label>
+
         </fieldset>
 
         <label for="modalidade-principal">Modalidade principal (obrigatória)</label>
+
         <select id="modalidade-principal" name="modalidade_principal" required>
+
           <option value="">Selecione uma modalidade</option>
+
           <optgroup label="Coletivas">
             <option value="futsal">Futsal</option>
             <option value="voleibol">Voleibol</option>
           </optgroup>
+
           <optgroup label="Individuais">
             <option value="atletismo">Atletismo</option>
             <option value="xadrez">Xadrez</option>
           </optgroup>
+
         </select>
+
+        <label for="interesse_atividades">Quantidade de atividades</label>
+        <input type="range" id="interesse-atividades" name="interesse_atividades" min="0" max="10" value="5">
 
         <label for="escola">Escola de origem</label>
         <input type="search" id="escola" name="escola" list="escolas">
+
         <datalist id="escolas">
           <option value="Escola Horizonte"></option>
           <option value="Escola Aurora"></option>
           <option value="Escola Caminhos"></option>
         </datalist>
 
+        <label> Link da escola</label>
+
+        <input type="url" name="site_escola">
+
+        <input type="submit" value="Enviar inscrição"/>
+        <button type="submit" value="Enviar inscrição">Confirmar inscrição</button>
+        <input type="reset" value="Limpar"/>
+        <input type="button" value="não tem"/>
     </form>
   </main>
-
 </body>
 </html>
